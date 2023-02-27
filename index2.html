@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>apply借用</title>
+</head>
+<body>
+    
+    <script type="text/javascript">
+    
+    function Teacher(name, age) {
+       this.name = name;
+       this.age = age;
+    }
+    function Student(name, age, hobby){
+        Teacher.apply(this, [name, age]);  // 把Teacher里的this改成Student里的this，并且把它里面的方法都拿过来
+        this.hobby = hobby;
+    }
+
+    var s = new Student('张三', '18', '电脑')
+
+    console.log(s)
+        
+    </script>
+</body>
+</html>
